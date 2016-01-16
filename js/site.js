@@ -10,291 +10,302 @@
 		s.parentNode.insertBefore(wf, s);
 	})();
 
-  var getBooks = function() {
+    var bookTitle;
+    var passageNum;
+
+
     var oldBooks = [
       {
         name: 'Genesis',
-        number: 50
+        num: 50
       },
       {
         name: 'Exodus',
-        number: 40
+        num: 40
       },
       {
         name: 'Leviticus',
-        number: 27
+        num: 27
       },
       {
         name: 'Numbers',
-        number: 36
+        num: 36
       },
       {
         name: 'Deuteronomy',
-        number: 34
+        num: 34
       },
       {
         name: 'Joshua',
-        number: 24
+        num: 24
       },
 
       {
         name: 'Judges',
-        number: 21
+        num: 21
       },
 
       {
         name: 'Ruth',
-        number: 4
+        num: 4
       },
       {
         name: '1 Samuel',
-        number: 31
+        num: 31
       },
       {
         name: '2 Samuel',
-        number: 24
+        num: 24
       },
       {
         name: '1 Kings',
-        number: 22
+        num: 22
       },
       {
         name: '2 Kings',
-        number: 25
+        num: 25
       },
       {
         name: '1 Chronicles',
-        number: 29
+        num: 29
       },
       {
         name: '2 Chronicles',
-        number: 36
+        num: 36
       },
       {
         name: 'Ezra',
-        number: 10
+        num: 10
       },
       {
         name: 'Nehemiah',
-        number: 13
+        num: 13
       },
 
       {
         name: 'Esther',
-        number: 10
+        num: 10
       },
       {
         name: 'Job',
-        number: 42
+        num: 42
       },
       {
         name: 'Psalms',
-        number: 150
+        num: 150
       },
       {
         name: 'Proverbs',
-        number: 31
+        num: 31
       },
       {
         name: 'Ecclesiastes',
-        number: 12
+        num: 12
       },
       {
         name: 'Song of Solomon',
-        number: 8
+        num: 8
       },
       {
         name: 'Isaiah',
-        number: 66
+        num: 66
       },
 
       {
         name: 'Jeremiah',
-        number: 52
+        num: 52
       },
       {
         name: 'Lamentations',
-        number: 5
+        num: 5
       },
       {
         name: 'Ezekiel',
-        number: 48
+        num: 48
       },
       {
         name: 'Daniel',
-        number: 12
+        num: 12
       },
 
       {
         name: 'Hosea',
-        number: 14
+        num: 14
       },
       {
         name: 'Joel',
-        number: 3
+        num: 3
       },
       {
         name: 'Amos',
-        number: 9
+        num: 9
       },
       {
         name: 'Obadiah',
-        number: 1
+        num: 1
       },
       {
         name: 'Jonah',
-        number: 4
+        num: 4
       },
       {
         name: 'Micah',
-        number: 7
+        num: 7
       },
       {
         name: 'Nahum',
-        number: 3
+        num: 3
       },
       {
         name: 'Habakkuk',
-        number: 3
+        num: 3
       },
       {
         name: 'Zephaniah',
-        number: 3
+        num: 3
       },
       {
         name: 'Haggai',
-        number: 2
+        num: 2
       },
       {
         name: 'Zechariah',
-        number: 14
+        num: 14
       },
       {
         name: 'Malachi',
-        number: 4
+        num: 4
       }
       ];
     var newBooks = [
       {
         name: 'Matthew',
-        number: 28
+        num: 28
       },
       {
         name: 'Mark',
-        number: 16
+        num: 16
       },
       {
         name: 'Luke',
-        number: 24
+        num: 24
       },
       {
         name: 'John',
-        number: 21
+        num: 21
       },
       {
         name: 'Acts',
-        number: 28
+        num: 28
       },
       {
         name: 'Romans',
-        number: 16
+        num: 16
       },
 
       {
         name: '1 Corinthians',
-        number: 16
+        num: 16
       },
       {
         name: '2 Corinthians',
-        number: 13
+        num: 13
       },
       {
         name: 'Galatians',
-        number: 6
+        num: 6
       },
       {
         name: 'Ephesians',
-        number: 6
+        num: 6
       },
       {
         name: 'Philippians',
-        number: 4
+        num: 4
       },
       {
         name: 'Colossians',
-        number: 4
+        num: 4
       },
       {
         name: '1 Thessalonians',
-        number: 5
+        num: 5
       },
       {
         name: '2 Thessalonians',
-        number: 3
+        num: 3
       },
       {
         name: '1 Timothy',
-        number: 6
+        num: 6
       },
       {
         name: '2 Timothy',
-        number: 4
+        num: 4
       },
       {
         name: 'Titus',
-        number: 3
+        num: 3
       },
       {
         name: 'Philemon',
-        number: 1
+        num: 1
       },
       {
         name: 'Hebrews',
-        number: 13
+        num: 13
       },
       {
         name: 'James',
-        number: 5
+        num: 5
       },
       {
         name: '1 Peter',
-        number: 5
+        num: 5
       },
       {
         name: '2 Peter',
-        number: 3
+        num: 3
       },
       {
         name: '1 John',
-        number: 5
+        num: 5
       },
       {
         name: '2 John',
-        number: 1
+        num: 1
       },
 
       {
         name: '3 John',
-        number: 1
+        num: 1
       },
 
       {
         name: 'Jude',
-        number: 1
+        num: 1
       },
       {
         name: 'Revelation',
-        number: 22
+        num: 22
       }
       ];
-  };
 
-	$("#search").submit(
-		function searchScripture(e, passage, version){
-			e.preventDefault();
+  		function searchScripture(book){
 			var userInput = $("#searchField").val();
-			passage = "p="+userInput;
-			version = "v=nasb";
+      var book = book;
+      if (book === "oldTest") {
+        var bookNum = Math.floor(Math.random()* 39);
+        bookTitle = oldBooks[bookNum].name;
+        passageNum = Math.floor(Math.random() * oldBooks[bookNum].num) + 1;
+      } else if (book === "newTest") {
+        var bookNum = Math.floor(Math.random()* 27);
+            bookTitle = newBooks[bookNum].name;
+            passageNum = Math.floor(Math.random() * newBooks[bookNum].num) + 1;
+      }
+      var input = userInput || bookTitle + ' ' + passageNum;
+			var passage = "p="+input;
+			var version = "v=nasb";
 			var query = passage + "&" + version;
 
 			$.ajax({
@@ -357,8 +368,22 @@
 				},
 			});
 		}
-	);
 
-	function getScripture(){
+	$("#search").submit(function(event) {
+    event.preventDefault();
+    searchScripture();
+  });
 
-	}
+  $("#oldTest").submit(function(event) {
+    event.preventDefault();
+    searchScripture('oldTest');
+  });
+
+  $("#newTest").submit(function(event) {
+      event.preventDefault();
+      searchScripture('newTest');
+    });
+
+	// function getScripture(){
+
+	// }
