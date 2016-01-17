@@ -6,5 +6,12 @@ body {
 }
 
 #book {
-	font-size: 4.6em;
+	font-size: 1em;
+}
+
+
+.col-8 {
+    background: silver;
+    display: inline-block;
+    width: 30%;
 }

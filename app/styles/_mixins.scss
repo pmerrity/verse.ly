@@ -1,0 +1,131 @@
+/******************************************
+Mixins
+******************************************/
+/******************************************
+Box Shadow
+******************************************/
+@mixin shadow($what...) {
+		-webkit-box-shadow: $what;
+		-moz-box-shadow: $what;
+		box-shadow: $what;
+}
+
+/******************************************
+Box Sizing
+******************************************/
+@mixin borderbox {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/******************************************
+Clearfix
+******************************************/
+@mixin clearfix {
+		zoom: 1;
+		&::before, &::after {
+			content: " ";
+			display: table;
+		}
+
+		&::after {
+			clear: both;
+		}
+}
+
+/******************************************
+Colors
+******************************************/
+@mixin color-bg($color){
+	background-color: $color;
+
+	&.lighten {
+		background-color: scale-color($color, $lightness: 12.5%);
+	}
+
+	&.darken {
+		background-color: scale-color($color, $lightness: -12.5%);
+	}
+
+	&.darkest {
+		background-color: scale-color($color, $lightness: -25%);
+	}
+}
+
+@mixin color-placeholder($color){
+  &::-webkit-input-placeholder {
+   color: $color;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: $color;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: $color;
+  }
+
+  &:-ms-input-placeholder {
+     color: $color;
+  }
+}
+
+@mixin color-text($color){
+	color: $color;
+
+	&.lighten {
+		color: scale-color($color, $lightness: 12.5%);
+	}
+
+	&.darken {
+		color: scale-color($color, $lightness: -12.5%);
+	}
+
+	&.darkest {
+		color: scale-color($color, $lightness: -25%);
+	}
+}
+
+/******************************************
+Screen Sizes
+******************************************/
+$mobile  : 680px;
+$tablet  : 1030px;
+$laptop  : 1400px;
+$desktop : 1600px;
+
+
+
+
+/******************************************
+Transform
+******************************************/
+@mixin transform($what...) {
+    -webkit-transform: $what;
+    -ms-transform: $what;
+    -moz-transform: $what;
+    -o-transform: $what;
+    transform: $what;
+}
+
+/******************************************
+Transition
+******************************************/
+@mixin transition($what...) {
+	-webkit-transition: $what;
+	-o-transition: $what;
+	-moz-transition: $what;
+  transition: $what;
+}
+
+
+
+/******************************************
+User-Select
+******************************************/
+@mixin userselect {
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
